@@ -23,7 +23,7 @@
  * 1. Replace PRODUCTION_API_URL with your actual Render backend URL
  * 2. Or set window.VITE_API_BASE_URL before this script loads
  */
-const PRODUCTION_API_URL = 'https://blueprintai-backend.onrender.com'; // TODO: Update with your Render URL
+const PRODUCTION_API_URL = 'https://blueprintai-zwtk.onrender.com';
 
 const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:8000'
