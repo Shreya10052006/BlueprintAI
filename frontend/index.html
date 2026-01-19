@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueprintAI - Smart Project Planning for Students</title>
+    <meta name="description"
+        content="Transform your project ideas into clear, explainable blueprints. Think, plan, and design — not generate code.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- ========================================
+         HEADER / NAVIGATION
+         ======================================== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="BlueprintAI" class="logo-img">
+                    <span>BlueprintAI</span>
+                </a>
+
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li><a href="dashboard.html" class="nav-link">Blueprint</a></li>
+                        <li><a href="#how-it-works" class="nav-link" id="howItWorksBtn">How It Works</a></li>
+                    </ul>
+                </nav>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <ul class="mobile-nav-list">
+                    <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
+                    <li><a href="dashboard.html" class="mobile-nav-link">Blueprint</a></li>
+                    <li><a href="#how-it-works" class="mobile-nav-link">How It Works</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================
+         SECTION 1: HERO
+         ======================================== -->
+    <section class="hero-gradient">
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Left Column: Text Content -->
+                <div class="hero-content">
+                    <h1 class="hero-main-title">BlueprintAI</h1>
+                    <p class="hero-tagline">AI-assisted project planning for students</p>
+                    <p class="hero-description">
+                        Turn a raw idea into a clear, explainable, and viva-ready project blueprint.
+                    </p>
+
+                    <!-- Info Box -->
+                    <div class="info-box">
+                        <div class="info-icon">💡</div>
+                        <div class="info-content">
+                            <strong>What this tool does:</strong>
+                            <p>This AI mentor helps you understand, plan, and explain your project.
+                                It does NOT generate code — it helps you think like an engineer.</p>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <a href="#start" class="btn btn-hero">
+                        Start with your idea →
+                    </a>
+                    <p class="hero-note">No coding required · Designed for students</p>
+                </div>
+
+                <!-- Right Column: Preview Card -->
+                <div class="hero-visual">
+                    <div class="preview-card">
+                        <div class="preview-header">
+                            <div class="preview-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span class="preview-title">Your Project Blueprint</span>
+                        </div>
+                        <div class="preview-content">
+                            <div class="preview-section">
+                                <div class="preview-label">📋 Problem Statement</div>
+                                <div class="preview-bar"></div>
+                                <div class="preview-bar short"></div>
+                            </div>
+                            <div class="preview-section">
+                                <div class="preview-label">✅ Feasibility</div>
+                                <div class="preview-tags">
+                                    <span class="preview-tag green">High</span>
+                                    <span class="preview-tag">2-3 months</span>
+                                </div>
+                            </div>
+                            <div class="preview-section">
+                                <div class="preview-label">🔄 System Flow</div>
+                                <div class="preview-flow">
+                                    <span class="flow-node">User</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-node">App</span>
+                                    <span class="flow-arrow">→</span>
+                                    <span class="flow-node">Database</span>
+                                </div>
+                            </div>
+                            <div class="preview-section">
+                                <div class="preview-label">🎤 30-sec Pitch</div>
+                                <div class="preview-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Divider -->
+        <div class="wave-divider">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,60 C300,120 600,0 900,60 C1050,90 1200,60 1200,60 L1200,120 L0,120 Z" fill="#f8fafc"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 2: START WITH YOUR IDEA
+         ======================================== -->
+    <section class="idea-section-v2" id="start">
+        <div class="container">
+            <div class="idea-grid">
+
+                <!-- LEFT COLUMN: Content + Input -->
+                <div class="idea-left">
+                    <h2 class="idea-title">Start with your idea</h2>
+                    <p class="idea-subtitle">Don't worry about perfection — we'll help you refine it.</p>
+
+                    <form id="ideaForm" class="idea-form-v2">
+                        <label for="ideaInput" class="idea-label">What do you want to build?</label>
+                        <textarea id="ideaInput" class="idea-textarea-v2"
+                            placeholder="Example: I want to build an attendance tracking system using QR codes for my college..."
+                            rows="5" maxlength="2000" required></textarea>
+                        <p class="form-hint"><span id="charCount">0</span> / 2000 characters</p>
+
+                        <button type="submit" class="btn btn-primary btn-generate" id="submitBtn">
+                            Generate Project Blueprint
+                        </button>
+                    </form>
+
+                    <!-- Loading State -->
+                    <div id="loadingState" class="loading hidden">
+                        <div class="spinner"></div>
+                        <p class="loading-text">Generating your blueprint...</p>
+                        <p class="loading-warning" style="color: #ef4444; font-size: 0.9rem; margin-top: 0.5rem;">⚠️
+                            Please do not refresh the page</p>
+                    </div>
+
+                    <!-- Error State -->
+                    <div id="errorMessage" class="error-message hidden">
+                        <p class="error-title" id="errorText">Something went wrong</p>
+                        <p class="error-text" id="errorSuggestion">Please try again.</p>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: Mode Cards + What You'll Get -->
+                <div class="idea-right">
+                    <p class="cards-label">Choose your planning mode</p>
+
+                    <!-- Planning Mode Cards -->
+                    <div class="planning-cards">
+                        <label class="planning-card selected">
+                            <input type="radio" name="planningMode" value="interactive" checked>
+                            <div class="card-inner">
+                                <span class="card-icon">🗣️</span>
+                                <div class="card-text">
+                                    <span class="card-title">Interactive Planning</span>
+                                    <span class="card-desc">Chat with the AI mentor to refine your idea step by
+                                        step.</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="planning-card">
+                            <input type="radio" name="planningMode" value="ai_only">
+                            <div class="card-inner">
+                                <span class="card-icon">⚡</span>
+                                <div class="card-text">
+                                    <span class="card-title">Quick Blueprint</span>
+                                    <span class="card-desc">Let AI generate your complete blueprint directly.</span>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- What You'll Get Panel -->
+                    <div class="benefits-panel">
+                        <h4 class="benefits-title">What you'll get</h4>
+                        <ul class="benefits-list">
+                            <li><span class="check-icon">✓</span> Clear problem definition</li>
+                            <li><span class="check-icon">✓</span> Feasibility & risk analysis</li>
+                            <li><span class="check-icon">✓</span> System architecture overview</li>
+                            <li><span class="check-icon">✓</span> Flowcharts & diagrams</li>
+                            <li><span class="check-icon">✓</span> Viva-ready explanations</li>
+                        </ul>
+                        <p class="benefits-note">We help you think and plan.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 3: WHY USE BLUEPRINTAI
+         ======================================== -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Why use BlueprintAI?</h2>
+                <p class="section-subtitle">Built to help students plan, explain, and defend projects confidently.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">📌</div>
+                    <h3 class="feature-title">Clear Problem Statement</h3>
+                    <p class="feature-text">Define your project's problem, scope, and objectives with clarity</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">✅</div>
+                    <h3 class="feature-title">Feasibility Analysis</h3>
+                    <p class="feature-text">Get honest assessment of risks, strengths, and realistic timelines</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">🎤</div>
+                    <h3 class="feature-title">Project Pitch</h3>
+                    <p class="feature-text">Generate 30-second and 1-minute pitches to present your project</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">🧪</div>
+                    <h3 class="feature-title">Viva-Ready</h3>
+                    <p class="feature-text">Get explanations and Q&A prep so you can defend your project confidently</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">🧠</div>
+                    <h3 class="feature-title">Mentor, Not Developer</h3>
+                    <p class="feature-text">We help you think and plan — never generate code for you</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">📊</div>
+                    <h3 class="feature-title">Visual Diagrams</h3>
+                    <p class="feature-text">Auto-generated flowcharts and architecture diagrams for documentation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <p class="footer-text">BlueprintAI</p>
+                <p class="footer-note">
+                    Smart project planning for students — we help you understand, not generate code.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         HOW IT WORKS MODAL
+         ======================================== -->
+    <div id="howItWorksModal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>How It Works</h2>
+                <button id="closeModal" class="modal-close">✕</button>
+            </div>
+
+            <ol class="steps-list">
+                <li><strong>Share your idea</strong> — even a rough concept works</li>
+                <li><strong>Get feasibility analysis</strong> — honest assessment of scope and risks</li>
+                <li><strong>Understand architecture</strong> — system design you can explain</li>
+                <li><strong>Map system flow</strong> — step-by-step user journey</li>
+                <li><strong>Analyze trade-offs</strong> — make informed feature decisions</li>
+                <li><strong>Export blueprint</strong> — complete documentation with diagrams</li>
+            </ol>
+
+            <div class="modal-note">
+                <strong>Remember:</strong>
+                <p>This tool helps you think like an engineer. We explain, not code.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Blueprint | BlueprintAI</title>
+    <meta name="description"
+        content="Your complete project blueprint with problem definition, architecture, system flow, and viva preparation.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- ========================================
+         HEADER / NAVIGATION
+         ======================================== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="BlueprintAI" class="logo-img"
+                        style="width: 36px; height: 36px; object-fit: contain;">
+                    <span>BlueprintAI</span>
+                </a>
+
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="dashboard.html" class="nav-link active">Blueprint</a></li>
+                        <li><a href="chat.html" class="nav-link">Chat</a></li>
+                    </ul>
+                </nav>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <ul class="mobile-nav-list">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    <li><a href="dashboard.html" class="mobile-nav-link active">Blueprint</a></li>
+                    <li><a href="chat.html" class="mobile-nav-link">Chat</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================
+         MAIN CONTENT
+         ======================================== -->
+    <main>
+        <div class="container">
+
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <h1 class="dashboard-title" id="projectTitle">Your Project Blueprint</h1>
+                <p class="dashboard-subtitle">Complete documentation for your project planning and presentation</p>
+
+                <!-- Export Buttons -->
+                <div style="display: flex; gap: var(--space-sm); margin-top: var(--space-lg); flex-wrap: wrap;">
+                    <button type="button" id="exportJsonBtn" class="btn btn-secondary">
+                        📥 Export Project Data (JSON)
+                    </button>
+                    <button type="button" id="exportPdfBtn" class="btn btn-secondary" onclick="exportAsPDF()">
+                        🖨️ Print / PDF
+                    </button>
+                    <button type="button" id="startOverBtn" class="btn btn-secondary">
+                        🔄 Start Over
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dashboard Layout -->
+            <div class="dashboard-layout">
+
+                <!-- Main Content -->
+                <div class="dashboard-content">
+
+                    <!-- Tabs Navigation -->
+                    <div class="tabs" role="tablist">
+                        <button class="tab-btn active" data-tab="summary" role="tab">Summary</button>
+                        <button class="tab-btn" data-tab="features" role="tab">Features</button>
+                        <button class="tab-btn" data-tab="feasibility" role="tab">Feasibility</button>
+                        <button class="tab-btn" data-tab="flow" role="tab">Flow</button>
+                        <button class="tab-btn" data-tab="tech" role="tab">Tech Stack</button>
+                        <button class="tab-btn" data-tab="flowcharts" role="tab">Diagrams</button>
+                        <button class="tab-btn" data-tab="comparison" role="tab">Comparison</button>
+                        <button class="tab-btn" data-tab="viva" role="tab">Viva & Hackathon</button>
+                        <button class="tab-btn" data-tab="pitch" role="tab">Pitch</button>
+                    </div>
+
+                    <!-- Tab Content: Summary -->
+                    <div id="summary" class="tab-content active" role="tabpanel">
+                        <div class="card-static blueprint-card">
+                            <div class="blueprint-header">
+                                <h2 class="blueprint-title">📋 Problem Definition</h2>
+                                <button class="copy-btn" data-section="ideaSummary" title="Copy this section"
+                                    aria-label="Copy this section">
+                                    <span class="copy-icon">📋</span>
+                                    <span class="copy-feedback">Copied!</span>
+                                </button>
+                            </div>
+                            <div class="blueprint-content" id="ideaSummary">
+                                <!-- Populated by JavaScript -->
+                                <div class="empty-state">
+                                    <div class="empty-icon">💡</div>
+                                    <h3 class="empty-title">No Blueprint Yet</h3>
+                                    <p class="empty-text">Start with even a rough idea — clarity comes step by step.</p>
+                                    <a href="index.html" class="btn btn-primary">Start Planning</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content: Features (NEW) -->
+                    <div id="features" class="tab-content" role="tabpanel">
+                        <div class="card-static blueprint-card">
+                            <div class="blueprint-header">
+                                <h2 class="blueprint-title">✨ Project Features</h2>
+                                <button class="copy-btn" data-section="featuresContent" title="Copy this section"
+                                    aria-label="Copy this section">
+                                    <span class="copy-icon">📋</span>
+                                    <span class="copy-feedback">Copied!</span>
+                                </button>
+                            </div>
+                            <div class="blueprint-content" id="featuresContent">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content: Feasibility -->
+                    <div id="feasibility" class="tab-content" role="tabpanel">
+                        <div class="card-static blueprint-card">
+                            <div class="blueprint-header">
+                                <h2 class="blueprint-title">📊 Feasibility Analysis</h2>
+                                <button class="copy-btn" data-section="feasibilityContent" title="Copy this section"
+                                    aria-label="Copy this section">
+                                    <span class="copy-icon">📋</span>
+                                    <span class="copy-feedback">Copied!</span>
+                                </button>
+                            </div>
+                            <div class="blueprint-content" id="feasibilityContent">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content: System Flow -->
+                    <div id="flow" class="tab-content" role="tabpanel">
+                        <div class="card-static blueprint-card">
+                            <div class="blueprint-header">
+                                <h2 class="blueprint-title">🔄 System Flow</h2>
+                                <button class="copy-btn" data-section="systemFlowContent" title="Copy this section"
+                                    aria-label="Copy this section">
+                                    <span class="copy-icon">📋</span>
+                                    <span class="copy-feedback">Copied!</span>
+                                </button>
+                            </div>
+                            <div class="blueprint-content" id="systemFlowContent">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content: Tech Stack -->
+                    <div id="tech" class="tab-content" role="tabpanel">
+                        <div class="card-static blueprint-card">
+                            <div class="blueprint-header">
+                                <h2 class="blueprint-title">🛠️ Technology Stack</h2>
+                                <button class="copy-btn" data-section="techStackContent" title="Copy this section"
+                                    aria-label="Copy this section">
+                                    <span class="copy-icon">📋</span>
+                                    <span class="copy-feedback">Copied!</span>
+                                </button>
+                            </div>
+                            <div class="blueprint-content" id="techStackContent">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content: Flowcharts -->
+                    <div id="flowcharts" class="tab-content" role="tabpanel">
+                        <div class="card-static blueprint-card">
+                            <div class="blueprint-header">
+                                <h2 class="blueprint-title">📈 Visual Diagrams</h2>
+                                <button class="copy-btn" data-section="diagramsContent" title="Copy this section"
+                                    aria-label="Copy this section">
+                                    <span class="copy-icon">📋</span>
+                                    <span class="copy-feedback">Copied!</span>
+                                </button>
+                            </div>
+                            <div class="blueprint-content" id="diagramsContent">
+                                <h4>User Flow Diagram</h4>
+                                <div class="diagram-container" id="userFlowDiagram">
+                                    <!-- Flowchart rendered here -->
+                                </div>
+                                <div class="diagram-actions">
+                                    <button onclick="exportFlowchartAsPNG('userFlowDiagram')"
+                                        class="btn btn-secondary">🖼️ PNG</button>
+                                    <button onclick="exportFlowchartAsPDF('userFlowDiagram')"
+                                        class="btn btn-secondary">📄 PDF</button>
+                                </div>
+
+                                <h4>Tech Stack Architecture</h4>
+                                <div class="diagram-container" id="techStackDiagram">
+                                    <!-- Flowchart rendered here -->
+                                </div>
+                                <div class="diagram-actions">
+                                    <button onclick="exportFlowchartAsPNG('techStackDiagram')"
+                                        class="btn btn-secondary">🖼️ PNG</button>
+                                    <button onclick="exportFlowchartAsPDF('techStackDiagram')"
+                                        class="btn btn-secondary">📄 PDF</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content: Comparison & Uniqueness (NEW) -->
+                    <div id="comparison" class="tab-content" role="tabpanel">
+                        <div class="card-static blueprint-card">
+                            <div class="blueprint-header">
+                                <h2 class="blueprint-title">🔍 Comparison & Uniqueness</h2>
+                                <button class="copy-btn" data-section="comparisonContent" title="Copy this section"
+                                    aria-label="Copy this section">
+                                    <span class="copy-icon">📋</span>
+                                    <span class="copy-feedback">Copied!</span>
+                                </button>
+                            </div>
+                            <div class="blueprint-content" id="comparisonContent">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content: Viva & Hackathon Guide -->
+                    <div id="viva" class="tab-content" role="tabpanel">
+                        <div class="card-static blueprint-card">
+                            <div class="blueprint-header">
+                                <h2 class="blueprint-title">🎓 Viva & Hackathon Preparation</h2>
+                                <button class="copy-btn" data-section="vivaContent" title="Copy this section"
+                                    aria-label="Copy this section">
+                                    <span class="copy-icon">📋</span>
+                                    <span class="copy-feedback">Copied!</span>
+                                </button>
+                            </div>
+                            <div class="blueprint-content" id="vivaContent">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content: Pitch -->
+                    <div id="pitch" class="tab-content" role="tabpanel">
+                        <div class="card-static blueprint-card">
+                            <div class="blueprint-header">
+                                <h2 class="blueprint-title">🎤 Project Pitch</h2>
+                                <button class="copy-btn" data-section="pitchContent" title="Copy this section"
+                                    aria-label="Copy this section">
+                                    <span class="copy-icon">📋</span>
+                                    <span class="copy-feedback">Copied!</span>
+                                </button>
+                            </div>
+                            <div class="blueprint-content" id="pitchContent">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Table of Contents (Desktop Sidebar) -->
+                <aside class="toc">
+                    <div class="card-static" style="padding: var(--space-lg);">
+                        <h3 class="toc-title">Sections</h3>
+                        <ul class="toc-list">
+                            <li><a href="#" class="toc-link active" data-tab="summary">Problem Definition</a></li>
+                            <li><a href="#" class="toc-link" data-tab="features">Project Features</a></li>
+                            <li><a href="#" class="toc-link" data-tab="feasibility">Feasibility Analysis</a></li>
+                            <li><a href="#" class="toc-link" data-tab="flow">System Flow</a></li>
+                            <li><a href="#" class="toc-link" data-tab="tech">Technology Stack</a></li>
+                            <li><a href="#" class="toc-link" data-tab="flowcharts">Visual Diagrams</a></li>
+                            <li><a href="#" class="toc-link" data-tab="comparison">Comparison & Uniqueness</a></li>
+                            <li><a href="#" class="toc-link" data-tab="viva">Viva & Hackathon</a></li>
+                            <li><a href="#" class="toc-link" data-tab="pitch">Project Pitch</a></li>
+                        </ul>
+
+                        <!-- Change Request Section -->
+                        <div
+                            style="margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid var(--border);">
+                            <h4
+                                style="font-size: var(--font-sm); color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                🔄 Suggest Changes
+                            </h4>
+                            <input type="text" id="changeRequestInput"
+                                placeholder="E.g., Remove login, simplify tech stack..."
+                                style="width: 100%; padding: 0.5rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.875rem; margin-bottom: var(--space-sm);">
+                            <button type="button" id="applyChangeBtn" class="btn btn-secondary btn-full"
+                                style="font-size: 0.875rem;">
+                                Apply Change
+                            </button>
+                            <p
+                                style="font-size: var(--font-xs); color: var(--text-muted); margin-top: var(--space-xs);">
+                                Affected sections will be updated automatically
+                            </p>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <p class="footer-text">BlueprintAI</p>
+                <p class="footer-note">
+                    Smart project planning for students — we help you understand, not generate code.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jsPDF for PDF Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Custom Flowchart Renderer (replaces Mermaid) -->
+    <script src="flowchart.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

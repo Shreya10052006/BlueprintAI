@@ -1,0 +1,25 @@
+# AI Project Planner - Backend Dependencies
+# ==========================================
+# Install with: pip install -r requirements.txt
+
+# Core Framework
+fastapi==0.109.0          # Modern Python web framework
+uvicorn[standard]==0.27.0 # ASGI server to run FastAPI
+
+# Data Validation
+pydantic==2.5.3           # Data validation using Python type hints
+
+# Environment Variables
+python-dotenv==1.0.0      # Load .env file for API keys
+
+# HTTP Client (for all provider API calls)
+httpx==0.26.0             # Async HTTP client for Gemini, Groq, OpenRouter
+
+# File Handling
+python-multipart==0.0.6   # Form data parsing
+
+# PDF Generation
+reportlab==4.0.8          # PDF generation for exports
+
+# Firebase (Backend-only persistence)
+firebase-admin==6.4.0     # Firebase Admin SDK for Firestore
