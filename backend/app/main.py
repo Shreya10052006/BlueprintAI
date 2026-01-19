@@ -85,8 +85,8 @@ FRONTEND_URL = os.getenv("FRONTEND_URL", "")
 if FRONTEND_URL:
     ALLOWED_ORIGINS.append(FRONTEND_URL)
 else:
-    # Default Vercel domain - TODO: Update with your actual Vercel URL
-    ALLOWED_ORIGINS.append("https://blueprintai.vercel.app")
+    # Vercel production domain
+    ALLOWED_ORIGINS.append("https://blueprint-ai-student.vercel.app")
 
 app.add_middleware(
     CORSMiddleware,
